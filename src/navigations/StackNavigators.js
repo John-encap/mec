@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../screens/Home'
 import GarageScreen from '../screens/Garage'
 import MechanicScreen from '../screens/Mechanic'
-
+import MechanicMapScreen from '../screens/MechanicMap'
 const Home = createNativeStackNavigator();
 
 export default function HomeStack(){
@@ -24,6 +24,11 @@ export default function HomeStack(){
                 <Home.Screen 
                     name ="MechanicScreen"
                     component = {MechanicScreen}
+                    options ={{headerShown:false}}
+                /> 
+                <Home.Screen 
+                    name ="MechanicMapScreen"
+                    component = {MechanicMapScreen}
                     options ={{headerShown:false}}
                 /> 
             </Home.Navigator>

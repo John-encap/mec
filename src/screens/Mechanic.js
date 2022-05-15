@@ -1,8 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View ,Image, ScrollView, TextInput} from 'react-native';
+import { StyleSheet, Text, View ,Button,Image, ScrollView, TextInput} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/core';
 
 const Mechanic = () => {
+  const navigation = useNavigation();
     return (
       <View style={styles.container}>
         
@@ -62,7 +64,12 @@ const Mechanic = () => {
             </View>
           </View>
           <View style={styles.btns}>
-
+            <Button
+              onPress={() => navigation.navigate("MechanicMapScreen")}
+              title="Learn More"
+              color="#841584"
+              accessibilityLabel="Learn more about this purple button"
+            />
           </View>
         </ScrollView>
 

@@ -2,6 +2,7 @@
   "expo": {
     "name": "projectX",
     "slug": "projectX",
+    "sdkVersion": "44.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -17,13 +18,27 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier":"com.mechanic",
+      "config":{
+        "googleMapsApiKey" :"AIzaSyB5oxocO9tOBYn56j01H6jbiQ_SbRbWQog"
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+
+    "package":"com.mechanic",
+    "config" :{
+      "googleMaps":{
+        "apiKey":"AIzaSyB5oxocO9tOBYn56j01H6jbiQ_SbRbWQog"
       }
+      
+    },
+    "permissions":["ACCESS_COARSE_LOCATION","ACCESS_FINE_LOCATION","FOREGROUND_SERVICE"]
+    
     },
     "web": {
       "favicon": "./assets/favicon.png"

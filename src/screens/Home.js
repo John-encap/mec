@@ -1,9 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import {colors, parameters} from '../global/styles.js'
-import { StyleSheet, Text, View, ScrollView,Image,Alert } from 'react-native';
-import React from 'react';
+import { StyleSheet, Text, View, ScrollView,Image,Alert,Dimensions } from 'react-native';
+import React,{useState,useRef,useEffect} from 'react'
 import { useNavigation } from '@react-navigation/core';
+import MapView, { PROVIDER_GOOGLE,} from 'react-native-maps'; 
+import * as Location from 'expo-location';
 
+import { filterData,carsAround } from '../global/data'
+import { mapStyle} from "../global/mapStyle"
+import Map from "../component/map"
+
+const SCREEN_WIDTH = Dimensions.get('window').width
 
 
 
@@ -13,6 +20,7 @@ const alt = () =>{
 
 const Home = () =>{
     const navigation = useNavigation();
+    
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -72,7 +80,11 @@ const Home = () =>{
                             </View>
                         </View>
                     </View>
+                    
 
+                    
+
+                       <Map></Map> 
                     
                 </View>
             </ScrollView>
@@ -138,6 +150,13 @@ const styles= StyleSheet.create({
         borderColor: '#f1f1ff',
         borderWidth: 1,
       },
+
+      map:{
+       
+        height: 150,
+         marginVertical: 0,
+         width:SCREEN_WIDTH*0.92
+        },
 
     
 })
